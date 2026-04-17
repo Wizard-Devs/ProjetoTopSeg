@@ -7,4 +7,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Reference Include="ProtocolSI">
+      <HintPath>..\..\..\..\Downloads\ProtocolSI_alunos\ProtocolSI_alunos\ProtocolSI.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
