@@ -14,7 +14,7 @@ class Servidor
     {
         TcpListener listener = new TcpListener(IPAddress.Any, 50003);
         listener.Start();
-        Console.WriteLine("[Servidor] listening on port 500003...");
+        Console.WriteLine("[Servidor] listening on port 50003...");
 
         while (true)
         {
@@ -23,18 +23,18 @@ class Servidor
             countClients++;
             int clientNumber = countClients;
 
-            Console.WriteLine($"[Servidor] Cliente {clientNumber} conectado");
+            Console.WriteLine($"[Servidor] Client {clientNumber} connected");
 
             NetworkStream networkStream = tcpCliente.GetStream();
             streams.Add(networkStream);
 
-            Thread t = new Thread(() => TratarCliente(networkStream, clientNumber));
+            Thread t = new Thread(() => MessageHandler(networkStream, clientNumber));
             t.IsBackground = true;
             t.Start();
         }
     }
 
-    static void TratarCliente(NetworkStream networkStream, int clientNumber)
+    static void MessageHandler(NetworkStream networkStream, int clientNumber)
     {
         ProtocolSI protocolSI = new ProtocolSI();
 
@@ -42,26 +42,25 @@ class Servidor
         {
             while (true)
             {
-                // Lê a mensagem que chegou do cliente
-                networkStream.Read(protocolSI.Buffer, 0, protocolSI.Buffer.Length);
+                networkStream.ReadExactly(protocolSI.Buffer, 0, protocolSI.Buffer.Length);
 
-                if (protocolSI.GetCmdType() == ProtocolSICmdType.MESSAGE)
+                if (protocolSI.GetCmdType() == ProtocolSICmdType.DATA)
                 {
                     string mensagem = protocolSI.GetStringFromData();
-                    Console.WriteLine($"Cliente {clientNumber}: " + mensagem);
+                    Console.WriteLine($"Cliente {clientNumber}: {mensagem}");
 
-                    EnviarParaTodos(mensagem, networkStream);
+                    Send(mensagem, networkStream);
                 }
                 else if (protocolSI.GetCmdType() == ProtocolSICmdType.EOF)
                 {
-                    Console.WriteLine("[Servidor] Cliente desligou.");
+                    Console.WriteLine("[Servidor] Client disconnected.");
                     break;
                 }
             }
         }
-        catch (Exception ex)
+        catch (Exception exception)
         {
-            Console.WriteLine("[Servidor] Erro: " + ex.Message);
+            Console.WriteLine("[Servidor] Erro: " + exception.Message);
         }
         finally
         {
@@ -70,10 +69,10 @@ class Servidor
         }
     }
 
-    static void EnviarParaTodos(string mensagem, NetworkStream remetente)
+    static void Send(string mensagem, NetworkStream remetente)
     {
         ProtocolSI protocolSI = new ProtocolSI();
-        byte[] pacote = protocolSI.Make(ProtocolSICmdType.MESSAGE, mensagem);
+        byte[] pacote = protocolSI.Make(ProtocolSICmdType.DATA, mensagem);
 
         foreach (NetworkStream ns in streams)
         {
