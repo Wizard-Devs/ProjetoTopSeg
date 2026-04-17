@@ -49,9 +49,9 @@
             // listBox2
             // 
             listBox2.FormattingEnabled = true;
-            listBox2.Location = new Point(627, 30);
+            listBox2.Location = new Point(620, 30);
             listBox2.Name = "listBox2";
-            listBox2.Size = new Size(156, 334);
+            listBox2.Size = new Size(163, 334);
             listBox2.TabIndex = 1;
             // 
             // label1
@@ -68,7 +68,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(627, 9);
+            label2.Location = new Point(620, 9);
             label2.Name = "label2";
             label2.Size = new Size(102, 15);
             label2.TabIndex = 3;
