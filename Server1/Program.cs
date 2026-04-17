@@ -84,7 +84,7 @@ class Servidor
             }
             catch
             {
-                Console.WriteLine("[Servidor] Falhou ao enviar para um cliente.");
+                Console.WriteLine("[Servidor] Failed sending the message to the client.");
             }
         }
     }
