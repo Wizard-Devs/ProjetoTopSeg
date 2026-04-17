@@ -42,7 +42,7 @@ class Servidor
         {
             while (true)
             {
-                networkStream.ReadExactly(protocolSI.Buffer, 0, protocolSI.Buffer.Length);
+                networkStream.Read(protocolSI.Buffer, 0, protocolSI.Buffer.Length);
 
                 if (protocolSI.GetCmdType() == ProtocolSICmdType.DATA)
                 {

@@ -28,65 +28,102 @@
         /// </summary>
         private void InitializeComponent()
         {
-            labelUser = new Label();
-            labelPass = new Label();
+            button2 = new Button();
+            btnEnviar = new Button();
+            label3 = new Label();
             textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            btnEntrar = new Button();
+            label2 = new Label();
+            label1 = new Label();
+            listBox2 = new ListBox();
+            listBox1 = new ListBox();
             SuspendLayout();
             // 
-            // labelUser
+            // button2
             // 
-            labelUser.AutoSize = true;
-            labelUser.Location = new Point(29, 17);
-            labelUser.Name = "labelUser";
-            labelUser.Size = new Size(60, 15);
-            labelUser.TabIndex = 0;
-            labelUser.Text = "Username";
+            button2.Location = new Point(682, 420);
+            button2.Name = "button2";
+            button2.Size = new Size(101, 54);
+            button2.TabIndex = 15;
+            button2.Text = "Desconectar-se";
+            button2.UseVisualStyleBackColor = true;
             // 
-            // labelPass
+            // btnEnviar
             // 
-            labelPass.AutoSize = true;
-            labelPass.Location = new Point(29, 89);
-            labelPass.Name = "labelPass";
-            labelPass.Size = new Size(57, 15);
-            labelPass.TabIndex = 1;
-            labelPass.Text = "Password";
+            btnEnviar.Location = new Point(597, 420);
+            btnEnviar.Name = "btnEnviar";
+            btnEnviar.Size = new Size(77, 54);
+            btnEnviar.TabIndex = 14;
+            btnEnviar.Text = "Enviar Mensagem";
+            btnEnviar.UseVisualStyleBackColor = true;
+            btnEnviar.Click += btnEnviar_Click_1;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Location = new Point(12, 402);
+            label3.Name = "label3";
+            label3.Size = new Size(91, 15);
+            label3.TabIndex = 13;
+            label3.Text = "Seu texto aqui:";
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(29, 35);
+            textBox1.Location = new Point(12, 420);
+            textBox1.Multiline = true;
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(240, 23);
-            textBox1.TabIndex = 2;
+            textBox1.Size = new Size(566, 54);
+            textBox1.TabIndex = 12;
             // 
-            // textBox2
+            // label2
             // 
-            textBox2.Location = new Point(29, 107);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(240, 23);
-            textBox2.TabIndex = 3;
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(620, 36);
+            label2.Name = "label2";
+            label2.Size = new Size(102, 15);
+            label2.TabIndex = 11;
+            label2.Text = "Lista de Usuários:";
             // 
-            // btnEntrar
+            // label1
             // 
-            btnEntrar.Location = new Point(29, 145);
-            btnEntrar.Name = "btnEntrar";
-            btnEntrar.Size = new Size(71, 36);
-            btnEntrar.TabIndex = 4;
-            btnEntrar.Text = "Entrar";
-            btnEntrar.UseVisualStyleBackColor = true;
-            btnEntrar.Click += btnEntrar_Click;
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(12, 36);
+            label1.Name = "label1";
+            label1.Size = new Size(35, 15);
+            label1.TabIndex = 10;
+            label1.Text = "Chat:";
+            // 
+            // listBox2
+            // 
+            listBox2.FormattingEnabled = true;
+            listBox2.Location = new Point(620, 54);
+            listBox2.Name = "listBox2";
+            listBox2.Size = new Size(163, 334);
+            listBox2.TabIndex = 9;
+            // 
+            // listBox1
+            // 
+            listBox1.FormattingEnabled = true;
+            listBox1.Location = new Point(12, 54);
+            listBox1.Name = "listBox1";
+            listBox1.Size = new Size(566, 334);
+            listBox1.TabIndex = 8;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(300, 193);
-            Controls.Add(btnEntrar);
-            Controls.Add(textBox2);
+            ClientSize = new Size(864, 494);
+            Controls.Add(button2);
+            Controls.Add(btnEnviar);
+            Controls.Add(label3);
             Controls.Add(textBox1);
-            Controls.Add(labelPass);
-            Controls.Add(labelUser);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(listBox2);
+            Controls.Add(listBox1);
             Name = "Form1";
             Text = "Form1";
             ResumeLayout(false);
@@ -95,10 +132,13 @@
 
         #endregion
 
-        private Label labelUser;
-        private Label labelPass;
+        private Button button2;
+        private Button btnEnviar;
+        private Label label3;
         private TextBox textBox1;
-        private TextBox textBox2;
-        private Button btnEntrar;
+        private Label label2;
+        private Label label1;
+        private ListBox listBox2;
+        private ListBox listBox1;
     }
 }
