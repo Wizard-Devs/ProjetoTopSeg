@@ -60,7 +60,7 @@ class Servidor
         }
         catch (Exception exception)
         {
-            Console.WriteLine("[Servidor] Erro: " + exception.Message);
+            Console.WriteLine("[Servidor] Error: " + exception.Message);
         }
         finally
         {
@@ -69,14 +69,14 @@ class Servidor
         }
     }
 
-    static void Send(string mensagem, NetworkStream remetente)
+    static void Send(string mensagem, NetworkStream sender)
     {
         ProtocolSI protocolSI = new ProtocolSI();
         byte[] pacote = protocolSI.Make(ProtocolSICmdType.DATA, mensagem);
 
         foreach (NetworkStream ns in streams)
         {
-            if (ns == remetente) continue;
+            if (ns == sender) continue;
 
             try
             {
