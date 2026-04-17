@@ -3,4 +3,5 @@
   <Project Path="Server/Server.csproj">
     <Build Solution="Debug|*" Project="false" />
   </Project>
+  <Project Path="Server1/Server1.csproj" Id="0350e8fb-30ac-436d-a952-4137e7d05ce3" />
 </Solution>
