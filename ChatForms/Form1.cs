@@ -1,4 +1,4 @@
-namespace ProjetoTopSeg
+namespace ChatForms
 {
     public partial class Form1 : Form
     {
@@ -7,10 +7,9 @@ namespace ProjetoTopSeg
             InitializeComponent();
         }
 
-        private void btnEntrar_Click(object sender, EventArgs e)
+        private void Form1_Load(object sender, EventArgs e)
         {
-            Form2 a = new Form2();
-            a.Show();
+
         }
     }
 }

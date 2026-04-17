@@ -1,4 +1,6 @@
 <Solution>
   <Project Path="ProjetoTopSeg/ProjetoTopSeg.csproj" />
-  <Project Path="Server/Server.csproj" />
+  <Project Path="Server/Server.csproj">
+    <Build Solution="Debug|*" Project="false" />
+  </Project>
 </Solution>
