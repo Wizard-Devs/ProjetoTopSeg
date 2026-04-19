@@ -31,7 +31,7 @@ namespace ProjetoTopSeg
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro ao ligar ao servidor: " + ex.Message);
+                MessageBox.Show("erro ao ligar ao servidor: " + ex.Message);
             }
         }
 
@@ -46,7 +46,7 @@ namespace ProjetoTopSeg
                     if (bytesRead == 0)
                     {
                         listBox1.Invoke((MethodInvoker)(() =>
-                            listBox1.Items.Add("Servidor desconectado")));
+                            listBox1.Items.Add("servidor desconectado")));
                         break;
                     }
 
@@ -70,7 +70,7 @@ namespace ProjetoTopSeg
                 if (listBox1.IsHandleCreated)
                 {
                     listBox1.Invoke((MethodInvoker)(() =>
-                        MessageBox.Show("Erro receção: " + ex.Message)));
+                        MessageBox.Show("rrro rececao: " + ex.Message)));
                 }
             }
         }
@@ -85,12 +85,12 @@ namespace ProjetoTopSeg
                 byte[] pacote = protocolSI.Make(ProtocolSICmdType.DATA, msg);
                 networkStream.Write(pacote, 0, pacote.Length);
 
-                listBox1.Items.Add("Eu: " + msg);
+                listBox1.Items.Add("eu: " + msg);
                 textBox1.Clear();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro ao enviar: " + ex.Message);
+                MessageBox.Show("erro ao enviar: " + ex.Message);
             }
         }
 
